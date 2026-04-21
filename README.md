@@ -70,7 +70,32 @@ python trading_bot/gui.py
 ```
 
 ### Option B: Run the Command Line Interface (CLI)
+
+The CLI offers two ways to trade:
+
+**1. Interactive Prompt (Easiest)**
+Just run the command below, and the bot will ask you for all the necessary details like Symbol, Side, and Quantity step-by-step:
+```bash
+python trading_bot/cli.py trade
+```
+
+**2. Direct Command Syntax (For automation and fast execution)**
+You can place orders instantly by passing all required arguments in a single line.
+
+*   **Market Buy:** instantly buy 0.005 BTC at whatever the current market price is:
+    ```bash
+    python trading_bot/cli.py trade --symbol BTCUSDT --side BUY --order-type MARKET --quantity 0.005
+    ```
+*   **Limit Sell:** place an order to short (SELL) 0.02 ETH *only* if the price hits $3,500.00:
+    ```bash
+    python trading_bot/cli.py trade --symbol ETHUSDT --side SELL --order-type LIMIT --quantity 0.02 --price 3500.0
+    ```
+*   **Short-hand flags:** (using `-s`, `-d`, `-t`, `-q`, `-p`):
+    ```bash
+    python trading_bot/cli.py trade -s BTCUSDT -d BUY -t LIMIT -q 0.01 -p 62000
+    ```
+
+For full documentation right in your terminal, run:
 ```bash
 python trading_bot/cli.py --help
-python trading_bot/cli.py --symbol BTCUSDT --side BUY --order-type MARKET --quantity 0.005
 ```
