@@ -8,7 +8,7 @@ from bot.validators import validate_symbol, validate_order_type, validate_side
 from bot.client import BinanceFuturesClient
 from bot.orders import OrderManager
 
-# Typer handles standard CLI capabilities intuitively (bonus item #2)
+# Typer handles standard CLI capabilities intuitively
 app = typer.Typer(help="Simplified Binance Futures Testnet Trading Bot")
 console = Console()
 
